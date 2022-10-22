@@ -2,7 +2,7 @@
 // @name         bilibili remove links
 // @license      MIT
 // @namespace    http://tampermonkey.net/
-// @version      0.31
+// @version      0.32
 // @description  自动去除阿B视频评论区中AI生成的搜索链接。
 // @author       Bilibili @显卡厨师
 // @match        www.bilibili.com/video/*
