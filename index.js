@@ -33,7 +33,7 @@
         });
     }
     var observer = new MutationObserver(handler);
-    observer.observe(document.querySelector('div.reply-list'), {
+    observer.observe(document.querySelector('div.left-container-under-player'), {
         subtree: true,
         childList: true
     });
