@@ -2,7 +2,7 @@
 // @name         bilibili remove links
 // @license      MIT
 // @namespace    http://tampermonkey.net/
-// @version      0.30
+// @version      0.31
 // @description  自动去除阿B视频评论区中AI生成的搜索链接。
 // @author       Bilibili @显卡厨师
 // @match        www.bilibili.com/video/*
@@ -21,7 +21,7 @@
 
             //恢复普通文本样式
             link.style.color = 'var(--text1)';
-            link.style.cursor = 'default';
+            link.style.cursor = 'text';
 
             //阻止点击事件
             link.onclick = eventObj => eventObj.preventDefault();
@@ -33,7 +33,7 @@
         });
     }
     var observer = new MutationObserver(handler);
-    observer.observe(document.querySelector('div.left-container-under-player'), {
+    observer.observe(document.querySelector('div.reply-list'), {
         subtree: true,
         childList: true
     });
