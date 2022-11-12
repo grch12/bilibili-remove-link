@@ -6,12 +6,17 @@
 // @description  自动去除阿B视频评论区中AI生成的搜索链接。
 // @author       Bilibili @显卡厨师
 // @match        www.bilibili.com/video/*
+// @match        www.bilibili.com/read/*
 // @icon         none
 // @grant        none
+// @run-at       document-idle
 // ==/UserScript==
 
 (function () {
     'use strict';
+    document.querySelector('#comment').addEventListener('DOMContentLoaded', () => {
+        alert('test');
+    })
     function handler() {
         document.querySelectorAll('a.search-word').forEach(link => {
             //移除无用的类与属性
@@ -33,7 +38,7 @@
         });
     }
     var observer = new MutationObserver(handler);
-    observer.observe(document.querySelector('div.left-container-under-player'), {
+    observer.observe(document.querySelector('#comment'), {
         subtree: true,
         childList: true
     });
